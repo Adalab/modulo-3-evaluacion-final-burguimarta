@@ -1,6 +1,6 @@
 
 const getApiData = () => {
-    return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/random?results=50')
+    return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/random?results=50&sort=movie')
       .then((response) => response.json())
       .then((data) => {
         const completeData = data.map((data, index) => {

@@ -1,5 +1,5 @@
 .card__image {
-    max-width: 200px;
+    width:200px;
     border-radius: 15px;
 }
 .card__link {
@@ -11,4 +11,12 @@
     margin: 5px;
     text-align: center;
     color: #DAF7A6;
+}
+.card__year {
+    text-align: center;
+    color:#DAF7A6;
+}
+.card__quote {
+    text-align: center;
+    color: #900C3F;
 }

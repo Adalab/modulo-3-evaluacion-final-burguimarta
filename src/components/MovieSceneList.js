@@ -1,4 +1,5 @@
 import MovieSceneItem from './MovieSceneItem';
+
 import '../styles/components/MovieSceneList.scss'
 
 function MovieSceneList (props) {
