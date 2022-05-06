@@ -9,7 +9,10 @@ const getApiData = () => {
             poster: data.poster,
             title: data.movie,
             full_line: data.full_line,
-            year: data.year
+            year: data.year,
+            director: data.director,
+            video: data.video,
+            audio: data.audio
           };
         });
         return completeData;

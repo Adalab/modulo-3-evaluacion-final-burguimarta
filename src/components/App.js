@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
+import { Orbit } from '@uiball/loaders'
+
 
 import getApiData from '../services/wowApi';
 import localStorage from '../services/localStorage';
@@ -36,7 +39,7 @@ const App = () => {
     .filter(movie => {
       return movie.title.toLowerCase().includes(filterMovie.toLowerCase()); 
     })
-    //Filtro por el año
+    //Filtro por el año con condicional ternario
     .filter (movie => {
       return filterYear === '' ? true : movie.year === filterYear;
     });
@@ -49,13 +52,16 @@ const App = () => {
   )].sort();
 
 // El objeto Set permite almacenar valores únicos de cualquier tipo, incluso valores primitivos u referencias a objetos.
-
+  const {pathname} = useLocation();
+  //const dataPath = matchPath("/movie/:movieId");
+  //console.log(dataPath);
   return (
     <>
       <h1 className="owen__title">Owen Wilson's Wow</h1>
       <InputSearch handleFilterMovie={handleFilterMovie} handleFilterYear={handleFilterYear} years={renderYears} yearSelected={filterYear}/>
 
       <Routes>
+        {/* No se meten los inputs -> InputSearch porque en los apuntes dice que los inputs siempre se pintan en todas las rutas */}
         <Route path="/" element={
           <MovieSceneList movies={wowData} />
         }/>
