@@ -1,16 +1,16 @@
 function InputFilterYear(props) {
     const renderYears = props.years.map((year, index) => {
-        return <option key={index} value={year}>{year}</option>;
+        if (props.yearSelected === year)
+            return <option key={index} value={year} selected>{year}</option>;
+        else
+            return <option key={index} value={year}>{year}</option>;
     });
-    
-    /*const renderYears = (props) => {
-        return props.years.map((year) => {
-            return <option key="{index}" value={year}>{year}</option>;
-        });
-    }*/
 
     const handleChange = (event) => {
-        props.handleFilterMovie(event.target.value);
+        if (event.target.value === "")
+            props.handleFilterYear(event.target.value);
+        else
+            props.handleFilterYear(parseInt(event.target.value));
     };
 
     return (

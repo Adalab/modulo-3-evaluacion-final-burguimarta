@@ -6,7 +6,7 @@ function InputSearch (props) {
         <section>
             <form>
                 <InputFilterMovie handleFilterMovie={props.handleFilterMovie}/>
-                <InputFilterYear handleFilterYear={props.handleFilterYear} years={props.years} />
+                <InputFilterYear handleFilterYear={props.handleFilterYear} years={props.years} yearSelected={props.yearSelected}/>
             </form>
         </section>
     );

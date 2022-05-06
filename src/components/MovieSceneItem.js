@@ -3,7 +3,7 @@ import '../styles/components/MovieSceneItem.scss'
 
 function MovieSceneItem (props) {
     return (
-        <Link className="card__link"to={`/user/${props.movie.id}`}>
+        <Link className="card__link" to={`/movie/${props.movie.id}`}>
             <img
                 className="card__image"
                 alt={props.movie.title}

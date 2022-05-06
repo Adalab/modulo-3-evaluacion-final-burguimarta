@@ -39,25 +39,32 @@ const App = () => {
     //Filtro por el año
     .filter (movie => {
       return filterYear === '' ? true : movie.year === filterYear;
-    })
-    //Filtro de duplicados
-    /*.filter (movie => {
-      return movie.title === ?
-    });*/
+    });
 
-  // Recorremos los años de las peliculas en la lista, lo pasamos a Set para quitar duplicados y copiamos los datos del Set a una array
+  // Recorremos los años de las peliculas en la lista, lo pasamos a Set para quitar duplicados, copiamos los datos del Set a una array, y lo ordenamos
   const renderYears = [...new Set(
     wowData.map(data => {
         return data.year;
     })
   )].sort();
 
+// El objeto Set permite almacenar valores únicos de cualquier tipo, incluso valores primitivos u referencias a objetos.
+
   return (
     <>
       <h1 className="owen__title">Owen Wilson's Wow</h1>
-      <InputSearch handleFilterMovie={handleFilterMovie} handleFilterYear={handleFilterYear} years={renderYears}/>
-    
-      <MovieSceneList movies={wowData} />
+      <InputSearch handleFilterMovie={handleFilterMovie} handleFilterYear={handleFilterYear} years={renderYears} yearSelected={filterYear}/>
+
+      <Routes>
+        <Route path="/" element={
+          <MovieSceneList movies={wowData} />
+        }/>
+
+        <Route path="/movie/:movieId" element={
+          <MovieSceneDetail />
+        }/>
+
+      </Routes>
     </>
   );
 };

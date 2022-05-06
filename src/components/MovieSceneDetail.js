@@ -1,5 +1,12 @@
+import {useParams} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 function MovieSceneDetail () {
-    return "";
+    const {movieId} = useParams();
+
+    return (
+        <>{movieId}</>
+    );
 }
 
 export default MovieSceneDetail;
