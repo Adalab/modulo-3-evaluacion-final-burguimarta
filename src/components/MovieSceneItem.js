@@ -14,7 +14,7 @@ function MovieSceneItem (props) {
             />
             <h4 className="card__title">{props.movie.title}</h4>
             <p className='card__year'>{props.movie.year}</p>
-            <p className='card__quote'>{props.movie.full_line}</p>
+            <p className='card__quote'>"{props.movie.full_line}"</p>
         </Link>
     );
 }

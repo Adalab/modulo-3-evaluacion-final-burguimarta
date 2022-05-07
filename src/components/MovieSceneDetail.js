@@ -4,24 +4,30 @@ import '../styles/components/MovieSceneDetail.scss';
 
 function MovieSceneDetail (props) {
     return (
-        <section>
-                <div>
-                <img
-                    className="card__image"
-                    alt={props.movie.title}
-                    src={props.movie.poster}
-                />
-                <h4 className="card__title">{props.movie.title}</h4>
-                <p className='card__year'>{props.movie.year}</p>
-                <p className='card__quote'>{props.movie.full_line}</p>
-                <p className='card__director'>{props.movie.director}</p>
+        <section className="sceneDetail">
+            <div className="sceneDetail__card">
+                <div className="sceneDetail__wrap">
+                    <div className="sceneDetail__wrapImage">
+                        <img
+                            className="sceneDetail__image"
+                            alt={props.movie.title}
+                            src={props.movie.poster}
+                        />
+                    </div>
+                    <div className="sceneDetail__wrapContent">
+                        <h4 className="sceneDetail__title">{props.movie.title}</h4>
+                        <p className='sceneDetail__year'>{props.movie.year}</p>
+                        <p className='sceneDetail__director'>{props.movie.director}</p>
 
-                <audio className="card__audio" controls>
-                    <source src={props.movie.audio} type="audio/mp3" />
-                    Your browser does not support the audio element.
-                </audio>
+                        <p className='sceneDetail__quote'>{props.movie.full_line}</p>
 
+                        <audio className="sceneDetail__audio" controls>
+                            <source src={props.movie.audio} type="audio/mp3" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                 </div>
+            </div>
         </section>
     );
 }

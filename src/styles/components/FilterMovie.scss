@@ -1,0 +1,13 @@
+.FilterMovie__label {
+    margin-right: 20px;
+}
+.FilterMovie__input {
+    margin-left: 20px;
+    border: 0px;
+    border: 4px solid #454545;
+    height: 20px;
+    width: 250px;
+}
+.FilterMovie__input:active, .FilterMovie__input:focus-visible {
+    border: 4px solid #000;
+}

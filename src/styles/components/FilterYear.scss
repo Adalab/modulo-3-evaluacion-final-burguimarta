@@ -1,0 +1,11 @@
+.FilterYear__input {
+    margin-left: 15px;
+    border: 0px;
+    border: 4px solid #454545;
+    height: 30px;
+    width: 75px;
+    text-align: center;
+}
+.FilterYear__input:active, .FilterYear__input:focus-visible {
+    border: 4px solid #000;
+}

@@ -34,8 +34,13 @@ const App = () => {
     if (dataScene.length === 0) {
       handleLoading(true);
 
-      getApiData().then((dataFromApi) => {
+      // Para que se vea el trabajo!!
+      setTimeout(function () {
         handleLoading(false);
+      }, 5000);
+
+      getApiData().then((dataFromApi) => {
+        //handleLoading(false);
         setDataScene(dataFromApi);
         ls.set("dataScene", dataFromApi);
       });
@@ -67,13 +72,17 @@ const App = () => {
   const movieFound = wowData.find ((item) => item.id === parseInt(movieId));
 
   return (
-    <>
-      <h1 className="owen__title">Owen Wilson's Wow</h1>
+    <div className='app'>
+      <header className='header'>
+        <a className='header__linkToHome' href="/"><h1 className="header__title">Owen Wilson's Wow</h1></a>
+      </header>
+      
       <InputSearch handleFilterMovie={handleFilterMovie} handleFilterYear={handleFilterYear} years={renderYears} yearSelected={filterYear}/>
 
       {loading && <>
         <div className="wrapperLoading">
-          <LeapFrog className="loading" size={75} speed={4} color="#232323" />
+          <LeapFrog className="loading" size={75} speed={4} color="#ffb5b5" />
+          <p className='loading__text'>Cargando...</p>
         </div>
       </>}
 
@@ -82,19 +91,19 @@ const App = () => {
         <Route path="/" element={
           <>
             <MovieSceneList movies={wowData} />
-            {wowData.length === 0 && !loading && <p className='withoutResult'>No hay resultados de {filterMovie}</p>}
+            {wowData.length === 0 && !loading && <p className='error'>No hay resultados de {filterMovie}</p>}
           </>
         }/>
 
         <Route path="/movie/:movieId" element={
           <>
             {movieFound !== undefined &&  <MovieSceneDetail movie={movieFound}/>}
-            {movieFound === undefined &&  <p>La escena que buscas no existe</p>}
+            {movieFound === undefined &&  <p className='error'>La escena que buscas no existe</p>}
           </>
         }/>
 
       </Routes>
-    </>
+    </div>
   );
 };
 

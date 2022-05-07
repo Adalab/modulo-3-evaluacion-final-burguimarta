@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
 
+import '../styles/components/FilterMovie.scss';
+
 function InputFilterMovie(props) {
     const handleChange = (event) => {
         props.handleFilterMovie(event.target.value)
     };
 
     return (
-        <label htmlFor="" > Movie
-            <input type={props.inputType} onChange={handleChange}/>
+        <label className="FilterMovie__label" htmlFor="inputFilterMovie" > Movie
+            <input className="FilterMovie__input" placeholder="Search for your WOW!!" id="inputFilterMovie" type={props.inputType} onChange={handleChange}/>
         </label>
     );
 };
