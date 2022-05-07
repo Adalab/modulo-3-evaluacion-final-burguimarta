@@ -1,4 +1,7 @@
+import PropTypes from "prop-types";
+
 import { Link } from 'react-router-dom';
+
 import '../styles/components/MovieSceneItem.scss'
 
 function MovieSceneItem (props) {
@@ -15,5 +18,10 @@ function MovieSceneItem (props) {
         </Link>
     );
 }
+
+// PropTypes, que define los tipos de los valores de los props
+MovieSceneItem.propTypes = {
+    movie: PropTypes.object.isRequired
+};
 
 export default MovieSceneItem;

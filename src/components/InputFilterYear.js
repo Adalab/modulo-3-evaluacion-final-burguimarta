@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function InputFilterYear(props) {
     const renderYears = props.years.map((year, index) => {
         if (props.yearSelected === year)
@@ -16,11 +18,17 @@ function InputFilterYear(props) {
     return (
         <>  
         <label className="input__title" htmlFor="">Year</label>  
-            <select className="" name="" id="" onChange={handleChange} value={props.year}>
+            <select className="" name="" id="" onChange={handleChange}>
                 <option value="">All</option>
                 {renderYears}
             </select>  
         </>
     );
 };
+
+// PropTypes, que define los tipos de los valores de los props
+InputFilterYear.propTypes = {
+    handleFilterYear: PropTypes.func.isRequired
+};
+
 export default InputFilterYear;

@@ -1,15 +1,10 @@
-import { checkPropTypes } from 'prop-types';
-import {useParams} from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+
 import '../styles/components/MovieSceneDetail.scss';
 
 function MovieSceneDetail (props) {
-
-    const {movieId} = useParams();
-
     return (
-        <section> {movieId}
-            <Link>
+        <section>
                 <div>
                 <img
                     className="card__image"
@@ -20,12 +15,20 @@ function MovieSceneDetail (props) {
                 <p className='card__year'>{props.movie.year}</p>
                 <p className='card__quote'>{props.movie.full_line}</p>
                 <p className='card__director'>{props.movie.director}</p>
-                <audio className="card__audio" src={props.movie.audio}>Icono que quiera</audio>
+
+                <audio className="card__audio" controls>
+                    <source src={props.movie.audio} type="audio/mp3" />
+                    Your browser does not support the audio element.
+                </audio>
+
                 </div>
-            </Link>
         </section>
-        
     );
 }
+
+// PropTypes, que define los tipos de los valores de los props
+MovieSceneDetail.propTypes = {
+    movie: PropTypes.object
+};
 
 export default MovieSceneDetail;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import MovieSceneItem from './MovieSceneItem';
 
 import '../styles/components/MovieSceneList.scss'
@@ -17,5 +19,10 @@ function MovieSceneList (props) {
         </section>
     );
 }
+
+// PropTypes, que define los tipos de los valores de los props
+MovieSceneList.propTypes = {
+  movies: PropTypes.array.isRequired
+};
 
 export default MovieSceneList;
