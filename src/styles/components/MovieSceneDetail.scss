@@ -43,5 +43,20 @@
     padding: 0 20px 20px 15px;
 }
 .sceneDetail__audio {
+    background-color: #407088;
+    width: 200px;
     margin: 0 auto;
+    padding: 25px 0;
+    transition: background 1s, border-radius 1s;
+}
+.sceneDetail__audio:hover {
+    border-radius: 30px;
+    transition: background 1s, border-radius 1s;
+}
+.sceneDetail__audioLink {
+    color: #FFF;
+    text-decoration: none;
+}
+.sceneDetail__audioLink:hover {
+    color: #FFF;
 }

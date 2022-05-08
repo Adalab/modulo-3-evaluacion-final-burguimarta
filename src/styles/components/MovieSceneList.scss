@@ -1,6 +1,7 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 30px 15px;
     padding: 0 25px;
 }

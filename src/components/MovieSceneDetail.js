@@ -21,10 +21,7 @@ function MovieSceneDetail (props) {
 
                         <p className='sceneDetail__quote'>{props.movie.full_line}</p>
 
-                        <audio className="sceneDetail__audio" controls>
-                            <source src={props.movie.audio} type="audio/mp3" />
-                            Your browser does not support the audio element.
-                        </audio>
+                        <p className="sceneDetail__audio"><a href={props.movie.audio} className="sceneDetail__audioLink" target="_blank" rel="noreferrer">Escucha el audio</a></p>
                     </div>
                 </div>
             </div>

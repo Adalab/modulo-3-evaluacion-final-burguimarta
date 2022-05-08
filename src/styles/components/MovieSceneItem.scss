@@ -1,10 +1,14 @@
 .card__image {
     width: 200px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 }
 .card__link {
     text-decoration:none;
     font-size: 20px;
+    
+}
+.card__link:hover .card__wrapContent {
+    display: block;
 }
 .card__title {
     margin: 10px;
@@ -20,4 +24,7 @@
     text-align: center;
     color: #FFF;
     padding: 0 20px 20px 15px;
+}
+.card__wrapContent {
+    display: none;
 }
