@@ -75,6 +75,16 @@ del tipo "La escena que buscas no existe".
 Un extra interesante sería que ordenáseis el listado de escenas alfabéticamente por el nombre de la
 película.
 
+### Para iniciar el proyecto:
+
+* Debes ejecutar en la consola del VSCode este comando:
+npm install
+
+* Una vez instaladas las dependencias, el proyecto se arranca ejecutando:
+npm start
+
+De esta forma podrás ver en local la página.
+
 ### Tecnologías usadas:
 
 <h3 align="left">Languages and Tools:</h3>
